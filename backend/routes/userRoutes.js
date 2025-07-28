@@ -32,8 +32,8 @@ routes.put("/:id",async(req,res) => {
     }
 });
 // get id api
-routes.get("/:id",async(req,res)=>{
-    try {
+routes.get("/:id", async (req, res) => {
+  try {
     const user = await User.findById(req.params.id);
     if (!user) return res.status(404).json({ error: "User not found" });
     res.status(200).json(user);
